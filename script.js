@@ -62,7 +62,12 @@ function writePassword() {
       for(i = 0; i < passwordLength; i++) {
         console.log(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
       } 
-    } else {
+    } else if (characterTypes.toLowerCase() === "numeric"){
+      for(i = 0; i < parseInt(passwordLength); i++) {
+        console.log(numerals[Math.floor(Math.random() * 10)])
+      }
+    } else if (characterTypes.toLowerCase() === "special characters") {
+    } else { 
     alert("Please choose a valid option")
     }
 
