@@ -77,11 +77,16 @@ function writePassword() {
     } else if (characterTypes.toLowerCase() === "numeric"){
       for(i = 0; i < parseInt(passwordLength); i++) {
         console.log(numerals[Math.floor(Math.random() * 10)])
+        finalPassword.push(numerals[Math.floor(Math.random() * 10)])
+        console.log(finalPassword)
       }
+      return finalPassword
     } else if (characterTypes.toLowerCase() === "special characters") {
       for(i = 0; i < parseInt(passwordLength); i++) {
         console.log(specialCharacters[Math.floor(Math.random() * passwordLength)])
+        
       }
+      
     } else { 
     alert("Please choose a valid option")
     }
