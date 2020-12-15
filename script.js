@@ -84,9 +84,10 @@ function writePassword() {
     } else if (characterTypes.toLowerCase() === "special characters") {
       for(i = 0; i < parseInt(passwordLength); i++) {
         console.log(specialCharacters[Math.floor(Math.random() * passwordLength)])
-        
+        finalPassword.push(specialCharacters[Math.floor(Math.random() * passwordLength)])
+        console.log(finalPassword)
       }
-      
+      return finalPassword
     } else { 
     alert("Please choose a valid option")
     }
