@@ -27,7 +27,7 @@ function writePassword() {
     var passwordLength =  prompt("Please select the desired length for your password. (Must be betwen 8 and 128 characters)");
 
   //Create a function to provide numbers for the user password 
-      function passwordNumbers () {
+      function passwordNumbers() {
 
     //Loop through random numbers as many times as the user selected for their password length
         for(i = 0; i < parseInt(passwordLength); i++ ) {
@@ -62,8 +62,8 @@ function writePassword() {
   
     if(characterTypes.toLowerCase() === "lowercase") {
       for(i = 0; i < passwordLength; i++) {
-        console.log(alphabet[Math.floor(Math.random() * passwordLength)])
-        finalPassword.push(alphabet[Math.floor(Math.random() * passwordLength)])
+        console.log(alphabet[Math.floor(Math.random() * alphabet.length)])
+        finalPassword.push(alphabet[Math.floor(Math.random() * alphabet.length)])
         console.log(finalPassword)
         
       }
@@ -72,8 +72,8 @@ function writePassword() {
     } 
     else if (characterTypes.toLowerCase() === "uppercase") {
       for(i = 0; i < passwordLength; i++) {
-        console.log(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
-        finalPassword.push(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
+        console.log(alphabet[Math.floor(Math.random() * alphabet.length)].toUpperCase())
+        finalPassword.push(alphabet[Math.floor(Math.random() * alphabet.length)].toUpperCase())
         console.log(finalPassword)
       } 
       return finalPassword.join('')
@@ -88,8 +88,8 @@ function writePassword() {
     } 
     else if (characterTypes.toLowerCase() === "special characters") {
       for(i = 0; i < parseInt(passwordLength); i++) {
-        console.log(specialCharacters[Math.floor(Math.random() * passwordLength)])
-        finalPassword.push(specialCharacters[Math.floor(Math.random() * passwordLength)])
+        console.log(specialCharacters[Math.floor(Math.random() * specialCharacters.length)])
+        finalPassword.push(specialCharacters[Math.floor(Math.random() * specialCharacters.length)])
         console.log(finalPassword)
       }
       return finalPassword.join('')
