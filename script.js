@@ -66,10 +66,14 @@ function writePassword() {
         
       }
       return finalPassword
+
     } else if (characterTypes.toLowerCase() === "uppercase") {
       for(i = 0; i < passwordLength; i++) {
         console.log(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
+        finalPassword.push(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
+        console.log(finalPassword)
       } 
+      return finalPassword
     } else if (characterTypes.toLowerCase() === "numeric"){
       for(i = 0; i < parseInt(passwordLength); i++) {
         console.log(numerals[Math.floor(Math.random() * 10)])
