@@ -22,7 +22,7 @@ function writePassword() {
   
 
   //Create a password length prompt
-    var passwordLength =  prompt("Please select the desired character length of your password. (Must be betwen 8 and 128 characters)");
+    var passwordLength =  prompt("Please choose the desired length of your password. Must be a number between 8 and 128.");
 
     //Create if statements to measure the length of password desired is within the range of the numbers 8 & 128 
 
