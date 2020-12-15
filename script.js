@@ -55,8 +55,10 @@ function writePassword() {
     //Create a character type prompt for the user to select characters to use
     var characterTypes = prompt("Please select the characters you would like to include in your password. (You may choose: lowercase, uppercase, numeric, and/or special characters)");
 
+    //Create a final password empty array to return.
     var finalPassword = []
    //Create if statements to ensure the selected types are of the values: lowercase, uppercase, numberic. and/or special characters    
+   
   
     if(characterTypes.toLowerCase() === "lowercase") {
       for(i = 0; i < passwordLength; i++) {
@@ -65,30 +67,34 @@ function writePassword() {
         console.log(finalPassword)
         
       }
-      return finalPassword
+      return finalPassword.join('')
 
-    } else if (characterTypes.toLowerCase() === "uppercase") {
+    } 
+    else if (characterTypes.toLowerCase() === "uppercase") {
       for(i = 0; i < passwordLength; i++) {
         console.log(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
         finalPassword.push(alphabet[Math.floor(Math.random() * passwordLength)].toUpperCase())
         console.log(finalPassword)
       } 
-      return finalPassword
-    } else if (characterTypes.toLowerCase() === "numeric"){
+      return finalPassword.join('')
+    } 
+    else if (characterTypes.toLowerCase() === "numeric"){
       for(i = 0; i < parseInt(passwordLength); i++) {
         console.log(numerals[Math.floor(Math.random() * 10)])
         finalPassword.push(numerals[Math.floor(Math.random() * 10)])
         console.log(finalPassword)
       }
-      return finalPassword
-    } else if (characterTypes.toLowerCase() === "special characters") {
+      return finalPassword.join('')
+    } 
+    else if (characterTypes.toLowerCase() === "special characters") {
       for(i = 0; i < parseInt(passwordLength); i++) {
         console.log(specialCharacters[Math.floor(Math.random() * passwordLength)])
         finalPassword.push(specialCharacters[Math.floor(Math.random() * passwordLength)])
         console.log(finalPassword)
       }
-      return finalPassword
-    } else { 
+      return finalPassword.join('')
+    } 
+    else { 
     alert("Please choose a valid option")
     }
 
