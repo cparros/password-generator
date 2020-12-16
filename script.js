@@ -31,7 +31,7 @@ function writePassword() {
     //ALSO be sure to change prompt input from string to number
     //Use parseInt to change string to number
     if(parseInt(passwordLength) <= 128 && parseInt(passwordLength) >= 8){
-      alert(`You have selected a password that is ${parseInt(passwordLength)} characters long.`)
+      confirm(`You have selected a password that is ${parseInt(passwordLength)} characters long.`)
       console.log(`User selected a password that is ${parseInt(passwordLength)} characters long`)
     } else if(parseInt(passwordLength) > 128 || parseInt(passwordLength) < 8 ){
       alert("Please select a number within the range of 8 and 128.")
@@ -40,7 +40,7 @@ function writePassword() {
 
 
     //Create a character type prompt for the user to select characters to use
-    var characterTypes = prompt("Please select the characters you would like to include in your password. For lowercase letters type: lowercase. For uppercase letters type: uppercase. For numbers type: numbers. For special characters type: special characters.")
+    var characterTypes = prompt("Please select the characters you would like to include in your password. For lowercase letters type: lowercase. For uppercase letters type: uppercase. For numbers type: numbers. For special characters type: special characters. For a mix of all characters type: All.")
 
     //Create a final password empty array to return.
     var finalPassword = []
@@ -82,12 +82,19 @@ function writePassword() {
       alert("Your password will be displayed in the text area. Please save it for your records.")
       return finalPassword.join('')
     }
+    else if (characterTypes.toLowerCase() === "all") {
+      var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+      var allCharacters = uppercase.concat(alphabet, numerals, specialCharacters)
+      for(i = 0; i < parseInt(passwordLength); i++) {
+        finalPassword.push(allCharacters[Math.floor(Math.random() * allCharacters.length)])
+      }
+      alert("Your password will be displayed in the text area. Please save it for your records.")
+      return finalPassword.join('')
+    }
     else {
+      
     alert("Please choose a valid option")
     }
-
-
-   
   }
 }
 
