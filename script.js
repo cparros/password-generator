@@ -19,8 +19,8 @@ function writePassword() {
   // Define special characters
     var specialCharacters = ['\u0020','\u0021', '\u0022', '\u0023', '\u0024', '\u0025', '\u0026',
     '\u0027', '\u0028', '\u0029', '\u002A', '\u002B', '\u002C', '\u002D', '\u002E', '\u002F', '\u003A', '\u003B', '\u003C', '\u003D', '\u003E', '\u003F', '\u0040', '\u005B', '\u005C', '\u005D', '\u005E', '\u005F', '\u0060', '\u007B', , '\u007C', '\u007D', '\u007E'] 
-  
-
+  // Define uppercase
+    var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   //Create a password length prompt
     var passwordLength =  prompt("Please choose the desired length of your password. Must be a number between 8 and 128.");
 
@@ -60,7 +60,7 @@ function writePassword() {
     }
     else if (characterTypes.toLowerCase() === "uppercase") {
       for(i = 0; i < passwordLength; i++) {
-        finalPassword.push(alphabet[Math.floor(Math.random() * alphabet.length)].toUpperCase());
+        finalPassword.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
       } 
       console.log("The user password is: " + finalPassword.join(''))
       alert("Your password will be displayed in the text area. Please save it for your records.")
@@ -83,7 +83,6 @@ function writePassword() {
       return finalPassword.join('')
     }
     else if (characterTypes.toLowerCase() === "all") {
-      var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
       var allCharacters = uppercase.concat(alphabet, numerals, specialCharacters)
       for(i = 0; i < parseInt(passwordLength); i++) {
         finalPassword.push(allCharacters[Math.floor(Math.random() * allCharacters.length)])
@@ -92,7 +91,6 @@ function writePassword() {
       return finalPassword.join('')
     }
     else {
-      
     alert("Please choose a valid option")
     }
   }
