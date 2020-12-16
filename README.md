@@ -10,5 +10,3 @@ https://cparros.github.io/password-generator/
 
 Image of application here:
 ![screenshot](passgenimg.png)
-
-<img src="passgenimg.png">
