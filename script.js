@@ -47,7 +47,7 @@ function writePassword() {
     } 
 
     //Create a character type prompt for the user to select characters to use
-    var characterTypes = prompt("Please select the characters you would like to include in your password. For lowercase letters type: lowercase. For uppercase letters type: uppercase. For numbers type: numbers. For special characters type: special characters. For a mix of all characters type: All.")
+    var characterTypes = prompt("Please select the characters you would like to include in your password. For lowercase letters type: lowercase. For uppercase letters type: uppercase. For numbers type: numbers. For special characters type: special characters. If you would like a mix of all character styles type: All.")
 
   if(characterTypes === null) {
     return
