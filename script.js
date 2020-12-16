@@ -21,32 +21,43 @@ function writePassword() {
     '\u0027', '\u0028', '\u0029', '\u002A', '\u002B', '\u002C', '\u002D', '\u002E', '\u002F', '\u003A', '\u003B', '\u003C', '\u003D', '\u003E', '\u003F', '\u0040', '\u005B', '\u005C', '\u005D', '\u005E', '\u005F', '\u0060', '\u007B', , '\u007C', '\u007D', '\u007E'] 
   // Define uppercase
     var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+  // Define ALL characters
+    var allCharacters = uppercase.concat(alphabet, numerals, specialCharacters)
   //Create a password length prompt
     var passwordLength =  prompt("Please choose the desired length of your password. Must be a number between 8 and 128.");
+    if(passwordLength === ''){
+      alert("Please select the length of your password.")
+      return
+    } else if (passwordLength === 'undefined'){
+      return
+    }
 
     //Create if statements to measure the length of password desired is within the range of the numbers 8 & 128 
-
-    
-
     //ALSO be sure to change prompt input from string to number
     //Use parseInt to change string to number
     if(parseInt(passwordLength) <= 128 && parseInt(passwordLength) >= 8){
-      confirm(`You have selected a password that is ${parseInt(passwordLength)} characters long.`)
+      var confirmation = confirm(`You have selected a password that is ${parseInt(passwordLength)} characters long.`)
+      if(confirmation === false) {
+        return
+      }
       console.log(`User selected a password that is ${parseInt(passwordLength)} characters long`)
     } else if(parseInt(passwordLength) > 128 || parseInt(passwordLength) < 8 ){
       alert("Please select a number within the range of 8 and 128.")
       return
     } 
 
-
     //Create a character type prompt for the user to select characters to use
     var characterTypes = prompt("Please select the characters you would like to include in your password. For lowercase letters type: lowercase. For uppercase letters type: uppercase. For numbers type: numbers. For special characters type: special characters. For a mix of all characters type: All.")
 
+  if(characterTypes === null) {
+    return
+  }
+
     //Create a final password empty array to return.
     var finalPassword = []
-   
+
     //Create if statements to ensure the selected types are of the values: lowercase, uppercase, numberic. and/or special characters    
-    //Console was used to check to ensure correct values were taken. (They have been removed) 
+    //Console was used to check to ensure password is taken. I can remove console logs if necessary!
    
   
     if(characterTypes.toLowerCase() === "lowercase") {
@@ -87,10 +98,10 @@ function writePassword() {
       for(i = 0; i < parseInt(passwordLength); i++) {
         finalPassword.push(allCharacters[Math.floor(Math.random() * allCharacters.length)])
       }
+      console.log("The user password is: " + finalPassword.join(''))
       alert("Your password will be displayed in the text area. Please save it for your records.")
       return finalPassword.join('')
-    }
-    else {
+    } else {
     alert("Please choose a valid option")
     }
   }
