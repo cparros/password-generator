@@ -55,7 +55,7 @@ function writePassword() {
 
   if(characterTypes === null) {
     return
-  }
+    }
 
     //Create a final password empty array to return.
     var finalPassword = []
